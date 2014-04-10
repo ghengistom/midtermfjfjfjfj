@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+int main()
+{
+	char Respone, Response2;
+	string first, middle, last, first1, middle1[10], last1;
+	while (Respone!='y')
+	{
+	cout<<"Enter your full name: ";cin>>first>>middle>>last;
+
+	cout<<"Hi "<<first<<" "<<last;
+	}
+
+
+	while (Response2!='y')
+	{
+	cout<<"Enter your full name: ";cin>>first>>middle>>last;
+
+	cout<<"Hi "<<first1<<" "<<middle1[0]<<" "<<last1;
+	}
+	
+	system("pause");
+	return 0;
+}
