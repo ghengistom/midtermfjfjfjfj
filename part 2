@@ -1,0 +1,75 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+using namespace std;
+struct STUDENT
+{
+	int total;
+	
+};
+
+void CopyData(fstream, int&)
+{
+	fstream file;
+	file.open("data.txt", ios::in);
+	p=new STUDENT[8];
+	
+	for (int i=0; i<8; ++i)
+	{
+		file>>p[i].name>>p[i].age;
+	}
+	file.close();
+}
+int TotalAll(int CS)
+{
+	int total=0;
+	for (int i=0; i<2; ++i)
+	{
+		for (int j=0; j<4; ++j)
+		{total+=CS[i][j];}
+	}
+	return total;
+}
+void TotalMalesFemales(int CS, string Class, int& All)
+{
+	int totalMales=0;
+	for (int i=0; i<2; ++i)
+	{
+		
+		totalMales+=CS[1][i];
+	}
+	int totalFemales=0;
+	for (int j=0; j<2; ++j)
+	{
+		totalFemales+=CS[2][j];
+	}
+	int All=totalMales+totalFemales;
+}
+void Display(All, Class, num)
+{
+	cout<<"Total of all students= ";
+	cout<<All;
+	cout<<"Total of all Junior students = ";
+	cout<<CS[i][2];
+}
+
+int main()
+{
+	int CS[2][4]; 
+	string Class; 
+	int num; 
+	int TotalCS121;
+	//copy data from the file into the array
+	CopyData("data.txt",CS);
+	//compute the total number of all students
+	int All = TotalAll(CS);
+	//compute the total number of students in each class
+	cout<<"Enter the classicfication"; cin>>Class;
+	num=TotalMalesFemales(CS, Class, All);
+	//display all
+	Display(All,Class, num);
+
+	system ("pause");
+	return 0;
+}
